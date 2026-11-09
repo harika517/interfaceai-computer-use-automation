@@ -1,0 +1,8 @@
+Page: /members
+- banner
+  - generic: Member Services
+- main
+  - heading "Something went wrong" [level=1]
+  - alert: The system could not complete your request. Please try again later.
+  - paragraph
+    - link "Back to Member Search"

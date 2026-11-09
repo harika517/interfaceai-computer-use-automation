@@ -1,0 +1,13 @@
+$ npm run replay -- --request "Get the savings balance for member 99999"
+Replaying member.get_savings_balance 1.0.1 (reusable) with no LLM.
+  step 1: fill textbox "Username" {"credential":"username"} → done (Done.)
+  step 2: fill textbox "Password" {"credential":"password"} → done (Done.)
+  step 3: click button "Sign In" → done (Done.)
+  step 4: fill textbox "Member ID" {"input":"member_id"} → done (Done.)
+  step 5: click button "Search" → done (Done.)
+
+Result: BUSINESS_OUTCOME
+Business outcome: NOT_FOUND: Member not found.
+Steps 5 · LLM calls 0 · 1.0s
+Run folder: runs/20261106T235003-78c2ab
+(exit code 0)

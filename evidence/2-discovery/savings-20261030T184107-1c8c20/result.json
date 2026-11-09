@@ -1,0 +1,48 @@
+{
+  "runId": "20261030T184107-1c8c20",
+  "status": "SUCCESS",
+  "outputs": {
+    "savings_balance": "$5,200.75"
+  },
+  "verification": {
+    "passed": true,
+    "checks": [
+      {
+        "check": "input member_id is shown on the result page",
+        "passed": true
+      },
+      {
+        "check": "output savings_balance was captured by a read step",
+        "passed": true
+      },
+      {
+        "check": "output savings_balance is still shown on the page",
+        "passed": true
+      },
+      {
+        "check": "output savings_balance was read under a heading naming \"savings\"",
+        "passed": true,
+        "detail": "Savings Account"
+      },
+      {
+        "check": "output savings_balance looks like an amount",
+        "passed": true
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 8,
+    "llmCalls": 8,
+    "inputTokens": 11339,
+    "outputTokens": 325,
+    "estimatedCostUsd": 0.009967,
+    "durationMs": 13937
+  },
+  "model": {
+    "provider": "openai",
+    "requested": "gpt-5.4-mini-2026-03-17",
+    "actual": [
+      "gpt-5.4-mini-2026-03-17"
+    ]
+  }
+}

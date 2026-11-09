@@ -1,0 +1,24 @@
+{
+  "runId": "20261106T235007-21e490",
+  "workflow": {
+    "name": "member.get_savings_balance",
+    "version": "1.0.0",
+    "status": "reusable"
+  },
+  "status": "NEEDS_HUMAN",
+  "stopReason": "UNEXPECTED_DIALOG",
+  "reason": "A dialog the workflow does not know about is open.",
+  "failure": {
+    "step": "(any)",
+    "expected": "no unknown dialog",
+    "observed": "page /members; headings: \"Member Search\", \"Member Details\", \"System Notice\""
+  },
+  "recovered": [],
+  "fallbacksUsed": [],
+  "checks": [],
+  "metrics": {
+    "steps": 5,
+    "llmCalls": 0,
+    "durationMs": 996
+  }
+}

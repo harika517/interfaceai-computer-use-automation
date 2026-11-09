@@ -1,0 +1,24 @@
+{
+  "runId": "20261106T235006-3c6eb2",
+  "workflow": {
+    "name": "member.get_savings_balance",
+    "version": "1.0.1",
+    "status": "reusable"
+  },
+  "status": "FAILED",
+  "stopReason": "BANK_ERROR",
+  "reason": "The bank showed its error page.",
+  "failure": {
+    "step": "server_error_page",
+    "expected": "no bank error",
+    "observed": "page /members; headings: \"Something went wrong\""
+  },
+  "recovered": [],
+  "fallbacksUsed": [],
+  "checks": [],
+  "metrics": {
+    "steps": 5,
+    "llmCalls": 0,
+    "durationMs": 1001
+  }
+}

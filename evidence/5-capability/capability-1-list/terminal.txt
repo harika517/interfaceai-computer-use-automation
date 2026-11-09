@@ -1,0 +1,24 @@
+$ npm run capability -- list
+{
+  "capabilities": [
+    {
+      "name": "member.get_savings_balance",
+      "version": "1.0.1",
+      "versions": [
+        "1.0.0",
+        "1.0.1"
+      ],
+      "description": "Get the savings balance for member {member_id}"
+    },
+    {
+      "name": "member.verify_checking_account",
+      "version": "1.0.1",
+      "versions": [
+        "1.0.0",
+        "1.0.1"
+      ],
+      "description": "Verify the checking account for the given member and report its status"
+    }
+  ]
+}
+(exit code 0)

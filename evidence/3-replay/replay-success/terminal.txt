@@ -1,0 +1,18 @@
+$ npm run replay -- --request "Get the savings balance for member 10048"
+Replaying member.get_savings_balance 1.0.1 (reusable) with no LLM.
+  step 1: fill textbox "Username" {"credential":"username"} → done (Done.)
+  step 2: fill textbox "Password" {"credential":"password"} → done (Done.)
+  step 3: click button "Sign In" → done (Done.)
+  step 4: fill textbox "Member ID" {"input":"member_id"} → done (Done.)
+  step 5: click button "Search" → done (Done.)
+  step 6: click button "Savings Account" → done (Done.)
+  step 7: read generic (after "Balance") → done (Captured output "savings_balance" = "$[amount]".)
+
+Result: SUCCESS
+savings_balance: $2,800.40
+  ✓ input member_id is shown on the page
+  ✓ output savings_balance is still shown where it was read
+  ✓ output savings_balance looks like an amount
+Steps 7 · LLM calls 0 · 1.6s
+Run folder: runs/20261106T234957-cd88f9
+(exit code 0)

@@ -1,0 +1,21 @@
+{
+  "runId": "20261106T235003-78c2ab",
+  "workflow": {
+    "name": "member.get_savings_balance",
+    "version": "1.0.1",
+    "status": "reusable"
+  },
+  "status": "BUSINESS_OUTCOME",
+  "businessOutcome": {
+    "code": "NOT_FOUND",
+    "message": "Member not found."
+  },
+  "recovered": [],
+  "fallbacksUsed": [],
+  "checks": [],
+  "metrics": {
+    "steps": 5,
+    "llmCalls": 0,
+    "durationMs": 993
+  }
+}

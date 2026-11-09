@@ -1,0 +1,19 @@
+$ npm run capability -- execute member.get_savings_balance --args '{"member_id":"10048"}'
+{
+  "capability": {
+    "name": "member.get_savings_balance",
+    "version": "1.0.1"
+  },
+  "status": "SUCCESS",
+  "outputs": {
+    "savings_balance": "$2,800.40"
+  },
+  "runId": "20261106T235010-a9d2ae",
+  "runDir": "runs/20261106T235010-a9d2ae",
+  "metrics": {
+    "steps": 7,
+    "llmCalls": 0,
+    "durationMs": 1305
+  }
+}
+(exit code 0)

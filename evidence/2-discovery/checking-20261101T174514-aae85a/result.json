@@ -1,0 +1,44 @@
+{
+  "runId": "20261101T174514-aae85a",
+  "status": "SUCCESS",
+  "outputs": {
+    "checking_status": "Active"
+  },
+  "verification": {
+    "passed": true,
+    "checks": [
+      {
+        "check": "input member_id is shown on the result page",
+        "passed": true
+      },
+      {
+        "check": "output checking_status was captured by a read step",
+        "passed": true
+      },
+      {
+        "check": "output checking_status is still shown on the page",
+        "passed": true
+      },
+      {
+        "check": "output checking_status was read under a heading naming \"checking\"",
+        "passed": true,
+        "detail": "Checking Account"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 9,
+    "llmCalls": 9,
+    "inputTokens": 12469,
+    "outputTokens": 353,
+    "estimatedCostUsd": 0.01094,
+    "durationMs": 13045
+  },
+  "model": {
+    "provider": "openai",
+    "requested": "gpt-5.4-mini-2026-03-17",
+    "actual": [
+      "gpt-5.4-mini-2026-03-17"
+    ]
+  }
+}

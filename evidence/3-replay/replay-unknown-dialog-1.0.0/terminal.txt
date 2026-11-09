@@ -1,0 +1,16 @@
+$ BANK_NOTICE=on bank; npm run replay -- --workflow member.get_savings_balance --version 1.0.0 --input member_id=10048
+Replaying member.get_savings_balance 1.0.0 (reusable) with no LLM.
+  step 1: fill textbox "Username" {"credential":"username"} → done (Done.)
+  step 2: fill textbox "Password" {"credential":"password"} → done (Done.)
+  step 3: click button "Sign In" → done (Done.)
+  step 4: fill textbox "Member ID" {"input":"member_id"} → done (Done.)
+  step 5: click button "Search" → done (Done.)
+
+Result: NEEDS_HUMAN (UNEXPECTED_DIALOG)
+Reason: A dialog the workflow does not know about is open.
+Failed at: (any)
+  expected: no unknown dialog
+  observed: page /members; headings: "Member Search", "Member Details", "System Notice"
+Steps 5 · LLM calls 0 · 1.0s
+Run folder: runs/20261106T235007-21e490
+(exit code 2)

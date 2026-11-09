@@ -1,0 +1,12 @@
+{
+  "member.get_savings_balance": [
+    "get the savings balance for member {member_id}",
+    "find the savings balance for member {member_id}",
+    "what is the savings balance for member {member_id}"
+  ],
+  "member.verify_checking_account": [
+    "verify the checking account for member {member_id}",
+    "get the checking account status for member {member_id}",
+    "what is the checking account status for member {member_id}"
+  ]
+}

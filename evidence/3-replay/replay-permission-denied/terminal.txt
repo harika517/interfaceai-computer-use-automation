@@ -1,0 +1,14 @@
+$ npm run replay -- --request "Get the savings balance for member 10046"
+Replaying member.get_savings_balance 1.0.1 (reusable) with no LLM.
+  step 1: fill textbox "Username" {"credential":"username"} → done (Done.)
+  step 2: fill textbox "Password" {"credential":"password"} → done (Done.)
+  step 3: click button "Sign In" → done (Done.)
+  step 4: fill textbox "Member ID" {"input":"member_id"} → done (Done.)
+  step 5: click button "Search" → done (Done.)
+  step 6: click button "Savings Account" → done (Done.)
+
+Result: BUSINESS_OUTCOME
+Business outcome: PERMISSION_DENIED: You do not have permission to view this account.
+Steps 6 · LLM calls 0 · 1.3s
+Run folder: runs/20261106T235004-902a97
+(exit code 0)

@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "name": "member.verify_checking_account",
+  "version": "1.0.0",
+  "description": "Verify the checking account for the given member and report its status",
+  "inputs": {
+    "member_id": {
+      "type": "string",
+      "pattern": "^\\d{5}$",
+      "description": "The member's 5-digit member ID.",
+      "source": "Module 1 member search accepts exact 5-digit IDs only (D-033 E-11; message \"Enter a valid 5-digit member ID.\")"
+    }
+  },
+  "outputs": {
+    "checking_status": {
+      "type": "text",
+      "section": "Checking Account",
+      "description": "Text shown as \"Status\" in the \"Checking Account\" section."
+    }
+  },
+  "start": {
+    "path": "/"
+  },
+  "login": [
+    {
+      "kind": "fill",
+      "id": "fill_username",
+      "timeoutSeconds": 10,
+      "expect": [
+        {
+          "visible": {
+            "role": "textbox",
+            "name": "Password",
+            "within": "Employee Sign In"
+          }
+        }
+      ],
+      "target": {
+        "primary": {
+          "role": "textbox",
+          "name": "Username",
+          "within": "Employee Sign In"
+        },
+        "fallbacks": [
+          {
+            "role": "textbox",
+            "name": "Username"
+          }
+        ],
+        "why": "Found by role and accessible name (textbox \"Username\"), which is the same for every member, inside the \"Employee Sign In\" section so a same-named control elsewhere cannot match. Must match exactly one element; the fallback drops the section and must also match exactly one."
+      },
+      "value": {
+        "credential": "username"
+      }
+    },
+    {
+      "kind": "fill",
+      "id": "fill_password",
+      "timeoutSeconds": 10,
+      "expect": [
+        {
+          "visible": {
+            "role": "button",
+            "name": "Sign In",
+            "within": "Employee Sign In"
+          }
+        }
+      ],
+      "target": {
+        "primary": {
+          "role": "textbox",
+          "name": "Password",
+          "within": "Employee Sign In"
+        },
+        "fallbacks": [
+          {
+            "role": "textbox",
+            "name": "Password"
+          }
+        ],
+        "why": "Found by role and accessible name (textbox \"Password\"), which is the same for every member, inside the \"Employee Sign In\" section so a same-named control elsewhere cannot match. Must match exactly one element; the fallback drops the section and must also match exactly one."
+      },
+      "value": {
+        "credential": "password"
+      }
+    },
+    {
+      "kind": "click",
+      "id": "click_sign_in",
+      "timeoutSeconds": 10,
+      "expect": [
+        {
+          "path": "/members"
+        },
+        {
+          "visible": {
+            "role": "textbox",
+            "name": "Member ID",
+            "within": "Member Search"
+          }
+        }
+      ],
+      "target": {
+        "primary": {
+          "role": "button",
+          "name": "Sign In",
+          "within": "Employee Sign In"
+        },
+        "fallbacks": [
+          {
+            "role": "button",
+            "name": "Sign In"
+          }
+        ],
+        "why": "Found by role and accessible name (button \"Sign In\"), which is the same for every member, inside the \"Employee Sign In\" section so a same-named control elsewhere cannot match. Must match exactly one element; the fallback drops the section and must also match exactly one."
+      }
+    }
+  ],
+  "steps": [
+    {
+      "kind": "fill",
+      "id": "fill_member_id",
+      "timeoutSeconds": 10,
+      "expect": [
+        {
+          "visible": {
+            "role": "button",
+            "name": "Search",
+            "within": "Member Search"
+          }
+        }
+      ],
+      "target": {
+        "primary": {
+          "role": "textbox",
+          "name": "Member ID",
+          "within": "Member Search"
+        },
+        "fallbacks": [
+          {
+            "role": "textbox",
+            "name": "Member ID"
+          }
+        ],
+        "why": "Found by role and accessible name (textbox \"Member ID\"), which is the same for every member, inside the \"Member Search\" section so a same-named control elsewhere cannot match. Must match exactly one element; the fallback drops the section and must also match exactly one."
+      },
+      "value": {
+        "input": "member_id"
+      }
+    },
+    {
+      "kind": "click",
+      "id": "click_search",
+      "timeoutSeconds": 10,
+      "expect": [
+        {
+          "visible": {
+            "role": "button",
+            "name": "Checking Account",
+            "within": "Member Details"
+          }
+        }
+      ],
+      "target": {
+        "primary": {
+          "role": "button",
+          "name": "Search",
+          "within": "Member Search"
+        },
+        "fallbacks": [
+          {
+            "role": "button",
+            "name": "Search"
+          }
+        ],
+        "why": "Found by role and accessible name (button \"Search\"), which is the same for every member, inside the \"Member Search\" section so a same-named control elsewhere cannot match. Must match exactly one element; the fallback drops the section and must also match exactly one."
+      }
+    },
+    {
+      "kind": "click",
+      "id": "click_checking_account",
+      "timeoutSeconds": 10,
+      "expect": [
+        {
+          "visible": {
+            "label": "Status",
+            "within": "Checking Account"
+          }
+        }
+      ],
+      "target": {
+        "primary": {
+          "role": "button",
+          "name": "Checking Account",
+          "within": "Member Details"
+        },
+        "fallbacks": [
+          {
+            "role": "button",
+            "name": "Checking Account"
+          }
+        ],
+        "why": "Found by role and accessible name (button \"Checking Account\"), which is the same for every member, inside the \"Member Details\" section so a same-named control elsewhere cannot match. Must match exactly one element; the fallback drops the section and must also match exactly one."
+      }
+    },
+    {
+      "kind": "read",
+      "id": "read_checking_status",
+      "timeoutSeconds": 10,
+      "expect": [],
+      "target": {
+        "primary": {
+          "label": "Status",
+          "within": "Checking Account"
+        },
+        "fallbacks": [
+          {
+            "label": "Status"
+          }
+        ],
+        "why": "Found by the label \"Status\" inside the \"Checking Account\" section. The value itself differs per member, so it is never used to find the element. Must match exactly one element; the fallback drops the section and must also match exactly one."
+      },
+      "output": "checking_status"
+    }
+  ],
+  "conditionalSteps": [
+    {
+      "id": "system_notice",
+      "description": "Acknowledge the System Notice popup when it covers the page.",
+      "when": [
+        {
+          "visible": {
+            "role": "dialog",
+            "name": "System Notice"
+          }
+        }
+      ],
+      "action": {
+        "kind": "click",
+        "target": {
+          "primary": {
+            "role": "button",
+            "name": "Acknowledge",
+            "within": "System Notice"
+          },
+          "fallbacks": [],
+          "why": "The popup's only button, found by role and name inside the \"System Notice\" dialog."
+        }
+      },
+      "maxTimes": 2,
+      "source": "E-10 (D-036): appears each time member details load when BANK_NOTICE=on",
+      "seenInSourceRun": true
+    },
+    {
+      "id": "session_expired",
+      "description": "When sent back to the login page with \"Session expired\", log in again and restart the main steps.",
+      "when": [
+        {
+          "path": "/login"
+        },
+        {
+          "visible": {
+            "text": "Session expired. Please log in again."
+          }
+        }
+      ],
+      "action": {
+        "kind": "login_and_restart"
+      },
+      "maxTimes": 1,
+      "source": "E-7 (D-036) and D-030: a not-logged-in response returns to login with \"Session expired\"",
+      "seenInSourceRun": false
+    },
+    {
+      "id": "server_error_page",
+      "description": "Stop with a failure on the bank's error page.",
+      "when": [
+        {
+          "visible": {
+            "role": "heading",
+            "name": "Something went wrong"
+          }
+        }
+      ],
+      "action": {
+        "kind": "fail",
+        "reason": "The bank showed its error page."
+      },
+      "maxTimes": 1,
+      "source": "E-9 (D-036): server error on search shows \"Something went wrong\"",
+      "seenInSourceRun": false
+    },
+    {
+      "id": "loading_checking_account",
+      "description": "Wait while the checking account is loading.",
+      "when": [
+        {
+          "visible": {
+            "text": "Loading checking account…",
+            "within": "Checking Account"
+          }
+        }
+      ],
+      "action": {
+        "kind": "wait_until",
+        "until": {
+          "gone": {
+            "text": "Loading checking account…",
+            "within": "Checking Account"
+          }
+        },
+        "timeoutSeconds": 15
+      },
+      "maxTimes": 1,
+      "source": "E-8 (D-036) and D-030: account details show a loading message naming the account",
+      "seenInSourceRun": false
+    },
+    {
+      "id": "load_error_checking_account",
+      "description": "Stop with a failure when the checking account details cannot be loaded.",
+      "when": [
+        {
+          "visible": {
+            "text": "Unable to load account details. Please try again.",
+            "within": "Checking Account"
+          }
+        }
+      ],
+      "action": {
+        "kind": "fail",
+        "reason": "The account details could not be loaded."
+      },
+      "maxTimes": 1,
+      "source": "E-9 (D-036): a failed account request shows this message",
+      "seenInSourceRun": false
+    }
+  ],
+  "businessOutcomes": [
+    {
+      "code": "NOT_FOUND",
+      "when": [
+        {
+          "visible": {
+            "text": "Member not found.",
+            "within": "Member Search"
+          }
+        }
+      ],
+      "message": "Member not found.",
+      "source": "Module 1 member search page message; seen in live run 7"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "when": [
+        {
+          "visible": {
+            "text": "Enter a valid 5-digit member ID.",
+            "within": "Member Search"
+          }
+        }
+      ],
+      "message": "Enter a valid 5-digit member ID.",
+      "source": "Module 1 member search validation: exact 5-digit IDs only (D-033 E-11)"
+    },
+    {
+      "code": "NO_ACCOUNT",
+      "when": [
+        {
+          "visible": {
+            "text": "No checking account on file.",
+            "within": "Checking Account"
+          }
+        }
+      ],
+      "message": "No checking account on file.",
+      "source": "D-031: account not on file"
+    },
+    {
+      "code": "PERMISSION_DENIED",
+      "when": [
+        {
+          "visible": {
+            "text": "You do not have permission to view this account.",
+            "within": "Checking Account"
+          }
+        }
+      ],
+      "message": "You do not have permission to view this account.",
+      "source": "D-031: restricted account; seen in live run 4"
+    }
+  ],
+  "success": [
+    {
+      "inputShown": "member_id"
+    },
+    {
+      "outputShown": "checking_status"
+    }
+  ],
+  "provenance": {
+    "sourceRun": "20261101T174514-aae85a",
+    "recorder": "deterministic-recorder/1",
+    "discoveryModel": [
+      "gpt-5.4-mini-2026-03-17"
+    ]
+  }
+}

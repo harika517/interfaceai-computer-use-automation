@@ -1,0 +1,14 @@
+node_modules/
+.env
+.DS_Store
+test-results/
+playwright-report/
+runs/
+
+# Kept locally, not published
+Assignment A — Computer-Use Automation System.pdf
+PROGRESS.md
+dailyStatus.md
+
+# Demo videos are published as GitHub Release assets, not committed
+demos/

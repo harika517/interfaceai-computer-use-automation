@@ -1,0 +1,66 @@
+{
+  "runId": "20261106T223030-649180",
+  "workflow": {
+    "name": "member.get_savings_balance",
+    "version": "1.0.0",
+    "status": "reusable"
+  },
+  "status": "SUCCESS",
+  "outputs": {
+    "savings_balance": "$2,800.40"
+  },
+  "recovered": [],
+  "fallbacksUsed": [],
+  "checks": [
+    {
+      "check": "input member_id is shown on the page",
+      "passed": true
+    },
+    {
+      "check": "output savings_balance is still shown where it was read",
+      "passed": true
+    },
+    {
+      "check": "output savings_balance looks like an amount",
+      "passed": true
+    }
+  ],
+  "handoffs": [
+    {
+      "handoff": 1,
+      "step": "(any)",
+      "stopReason": "UNEXPECTED_DIALOG",
+      "reason": "A dialog the workflow does not know about is open.",
+      "startedAt": "2026-11-06T22:30:32.852Z",
+      "endedAt": "2026-11-06T22:30:44.763Z",
+      "durationMs": 11911,
+      "end": "done",
+      "humanActions": 1,
+      "sessionId": "670a1e6a-9202-4fc2-af0c-aca2634c0a51",
+      "stepsPassed": [
+        "click_search"
+      ]
+    }
+  ],
+  "control": [
+    {
+      "at": "2026-11-06T22:30:32.863Z",
+      "from": "automation",
+      "to": "human",
+      "epoch": 1,
+      "reason": "handoff 1: UNEXPECTED_DIALOG"
+    },
+    {
+      "at": "2026-11-06T22:30:44.759Z",
+      "from": "human",
+      "to": "automation",
+      "epoch": 2,
+      "reason": "handoff 1: the person finished"
+    }
+  ],
+  "metrics": {
+    "steps": 7,
+    "llmCalls": 0,
+    "durationMs": 14571
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "computer-use-automation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Computer-use automation system: LLM discovery, recorded workflows, deterministic replay, human handoff.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "bank": "tsx mock-bank/src/server.ts",
+    "typecheck": "tsc --noEmit",
+    "discover": "tsx automation/src/cli.ts",
+    "record": "tsx automation/src/workflow/record-cli.ts",
+    "replay": "tsx automation/src/replay/replay-cli.ts",
+    "capability": "tsx automation/src/agent/capability-cli.ts",
+    "test": "node --import tsx --test \"automation/test/*.test.ts\""
+  },
+  "dependencies": {
+    "ejs": "^7.0.1",
+    "express": "^5.3.0",
+    "express-session": "^1.19.0",
+    "openai": "^7.45.1",
+    "playwright": "^1.64.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/express-session": "^1.19.0",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

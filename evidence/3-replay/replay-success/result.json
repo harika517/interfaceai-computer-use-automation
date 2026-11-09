@@ -1,0 +1,33 @@
+{
+  "runId": "20261106T234957-cd88f9",
+  "workflow": {
+    "name": "member.get_savings_balance",
+    "version": "1.0.1",
+    "status": "reusable"
+  },
+  "status": "SUCCESS",
+  "outputs": {
+    "savings_balance": "$2,800.40"
+  },
+  "recovered": [],
+  "fallbacksUsed": [],
+  "checks": [
+    {
+      "check": "input member_id is shown on the page",
+      "passed": true
+    },
+    {
+      "check": "output savings_balance is still shown where it was read",
+      "passed": true
+    },
+    {
+      "check": "output savings_balance looks like an amount",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "steps": 7,
+    "llmCalls": 0,
+    "durationMs": 1582
+  }
+}

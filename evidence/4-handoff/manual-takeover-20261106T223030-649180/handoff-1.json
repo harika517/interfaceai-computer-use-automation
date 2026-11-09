@@ -1,0 +1,18 @@
+{
+  "handoff": 1,
+  "maxHandoffs": 2,
+  "source": "replay",
+  "workflow": {
+    "name": "member.get_savings_balance",
+    "version": "1.0.0"
+  },
+  "step": "(any)",
+  "stopReason": "UNEXPECTED_DIALOG",
+  "reason": "A dialog the workflow does not know about is open.",
+  "expected": "no unknown dialog",
+  "observed": "page /members; headings: \"Member Search\", \"Member Details\", \"System Notice\"",
+  "path": "/members",
+  "sessionId": "670a1e6a-9202-4fc2-af0c-aca2634c0a51",
+  "timeoutSeconds": 600,
+  "snapshot": "Page: /members\n- banner\n  - generic: Member Services\n  - button \"Log Out\"\n- main\n  - heading \"Member Search\" [level=1]\n  - generic: Member ID\n  - textbox \"Member ID\": <input:member_id>\n  - button \"Search\"\n  - heading \"Member Details\" [level=2]\n  - generic: Member ID\n  - generic: <input:member_id>\n  - generic: Member Name\n  - generic: [redacted]\n  - button \"Savings Account\"\n  - button \"Checking Account\"\n  - button \"Loans\"\n  - button \"Credit Cards\"\n  - button \"Edit Profile\"\n  - paragraph: Select an option to view details.\n  - dialog\n    - heading \"System Notice\" [level=2]\n    - paragraph: Scheduled maintenance will take place tonight from 11:00 PM to 1:00 AM. Some services may be unavailable during this time.\n    - button \"Acknowledge\""
+}

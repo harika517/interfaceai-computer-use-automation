@@ -1,0 +1,29 @@
+{
+  "runId": "20261106T234959-d3f0d0",
+  "workflow": {
+    "name": "member.verify_checking_account",
+    "version": "1.0.1",
+    "status": "reusable"
+  },
+  "status": "SUCCESS",
+  "outputs": {
+    "checking_status": "Active"
+  },
+  "recovered": [],
+  "fallbacksUsed": [],
+  "checks": [
+    {
+      "check": "input member_id is shown on the page",
+      "passed": true
+    },
+    {
+      "check": "output checking_status is still shown where it was read",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "steps": 7,
+    "llmCalls": 0,
+    "durationMs": 1270
+  }
+}

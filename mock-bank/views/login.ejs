@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign In – Member Services</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">Member Services</span>
+  </header>
+  <main class="page">
+    <section class="card narrow">
+      <h1>Employee Sign In</h1>
+      <% if (notice) { %><p class="notice" role="status"><%= notice %></p><% } %>
+      <% if (error) { %><p class="error" role="alert"><%= error %></p><% } %>
+      <form method="post" action="/login" class="stack">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" autocomplete="username" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button type="submit" class="pill primary">Sign In</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

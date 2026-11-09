@@ -1,0 +1,24 @@
+Page: /members
+- banner
+  - generic: Member Services
+  - button "Log Out"
+- main
+  - heading "Member Search" [level=1]
+  - generic: Member ID
+  - textbox "Member ID": <input:member_id>
+  - button "Search"
+  - heading "Member Details" [level=2]
+  - generic: Member ID
+  - generic: <input:member_id>
+  - generic: Member Name
+  - generic: [redacted]
+  - button "Savings Account"
+  - button "Checking Account"
+  - button "Loans"
+  - button "Credit Cards"
+  - button "Edit Profile"
+  - paragraph: Select an option to view details.
+  - dialog
+    - heading "System Notice" [level=2]
+    - paragraph: Scheduled maintenance will take place tonight from 11:00 PM to 1:00 AM. Some services may be unavailable during this time.
+    - button "Acknowledge"

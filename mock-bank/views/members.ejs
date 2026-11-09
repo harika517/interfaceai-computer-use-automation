@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Member Details – Member Services</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">Member Services</span>
+    <form method="post" action="/logout">
+      <button type="submit" class="pill">Log Out</button>
+    </form>
+  </header>
+  <main class="page">
+    <section class="card">
+      <h1>Member Search</h1>
+      <form method="get" action="/members" class="search">
+        <label for="memberId">Member ID</label>
+        <input id="memberId" name="memberId" type="text" inputmode="numeric" value="<%= searchedId %>">
+        <button type="submit" class="pill primary">Search</button>
+      </form>
+      <% if (error) { %><p class="error" role="alert"><%= error %></p><% } %>
+    </section>
+
+    <% if (member) { %>
+    <section class="card" data-member-id="<%= member.memberId %>">
+      <h2>Member Details</h2>
+      <div class="member-summary">
+        <div>
+          <div class="label">Member ID</div>
+          <div class="value"><%= member.memberId %></div>
+        </div>
+        <div>
+          <div class="label">Member Name</div>
+          <div class="value"><%= member.memberName %></div>
+        </div>
+      </div>
+      <div class="actions">
+        <button type="button" class="pill" data-account="savings" aria-pressed="false">Savings Account</button>
+        <button type="button" class="pill" data-account="checking" aria-pressed="false">Checking Account</button>
+        <button type="button" class="pill" data-unavailable="Not available at the moment." aria-pressed="false">Loans</button>
+        <button type="button" class="pill" data-unavailable="Not available at the moment." aria-pressed="false">Credit Cards</button>
+        <button type="button" class="pill" data-unavailable="Not available in demo." aria-pressed="false">Edit Profile</button>
+      </div>
+      <div id="account-details" class="details" aria-live="polite">
+        <p class="muted">Select an option to view details.</p>
+      </div>
+    </section>
+    <script src="/static/member-page.js"></script>
+    <% } %>
+    <% if (showNotice) { %>
+    <div class="overlay" id="system-notice">
+      <div class="card dialog" role="dialog" aria-modal="true" aria-labelledby="notice-title">
+        <h2 id="notice-title">System Notice</h2>
+        <p>Scheduled maintenance will take place tonight from 11:00 PM to 1:00 AM. Some services may be unavailable during this time.</p>
+        <button type="button" class="pill primary" id="acknowledge-notice">Acknowledge</button>
+      </div>
+    </div>
+    <script src="/static/notice.js"></script>
+    <% } %>
+  </main>
+</body>
+</html>

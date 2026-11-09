@@ -1,0 +1,8 @@
+$ npm run replay -- --request "Get the savings balance for member 1234"
+Replaying member.get_savings_balance 1.0.1 (reusable) with no LLM.
+
+Result: BUSINESS_OUTCOME
+Business outcome: INVALID_INPUT: Enter a valid 5-digit member ID.
+Steps 0 · LLM calls 0 · 0.0s
+Run folder: runs/20261106T235004-2d224b
+(exit code 0)

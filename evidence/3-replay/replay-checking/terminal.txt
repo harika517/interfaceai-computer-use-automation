@@ -1,0 +1,17 @@
+$ npm run replay -- --request "Verify the checking account for member 10050"
+Replaying member.verify_checking_account 1.0.1 (reusable) with no LLM.
+  step 1: fill textbox "Username" {"credential":"username"} → done (Done.)
+  step 2: fill textbox "Password" {"credential":"password"} → done (Done.)
+  step 3: click button "Sign In" → done (Done.)
+  step 4: fill textbox "Member ID" {"input":"member_id"} → done (Done.)
+  step 5: click button "Search" → done (Done.)
+  step 6: click button "Checking Account" → done (Done.)
+  step 7: read generic (after "Status") → done (Captured output "checking_status" = "Active".)
+
+Result: SUCCESS
+checking_status: Active
+  ✓ input member_id is shown on the page
+  ✓ output checking_status is still shown where it was read
+Steps 7 · LLM calls 0 · 1.3s
+Run folder: runs/20261106T234959-d3f0d0
+(exit code 0)

@@ -1,0 +1,6 @@
+$ npm run capability -- execute member.get_savings_balance --args '{"member_id":"10048","password":"x"}'
+{
+  "status": "REFUSED",
+  "reason": "Unknown input(s): password. member.get_savings_balance takes member_id."
+}
+(exit code 3)

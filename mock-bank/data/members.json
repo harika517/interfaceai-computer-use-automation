@@ -1,0 +1,130 @@
+
+{
+    "members": [
+      {
+        "memberId": "10042",
+        "memberName": "John Smith",
+        "savings": {
+          "accountNumber": "SAV10042",
+          "balance": 5200.75,
+          "status": "active"
+        },
+        "checking": {
+          "accountNumber": "CHK10042",
+          "balance": 1850.25,
+          "status": "active"
+        }
+      },
+      {
+        "memberId": "10043",
+        "memberName": "Jane Doe",
+        "savings": null,
+        "checking": {
+          "accountNumber": "CHK10043",
+          "balance": 800.00,
+          "status": "active"
+        }
+      },
+      {
+        "memberId": "10044",
+        "memberName": "Alex Brown",
+        "savings": {
+          "accountNumber": "SAV10044",
+          "balance": 0,
+          "status": "active"
+        },
+        "checking": {
+          "accountNumber": "CHK10044",
+          "balance": 300.50,
+          "status": "restricted"
+        }
+      },
+      {
+        "memberId": "10045",
+        "memberName": "Emily Davis",
+        "savings": {
+          "accountNumber": "SAV10045",
+          "balance": 7200.00,
+          "status": "active"
+        },
+        "checking": null
+      },
+      {
+        "memberId": "10046",
+        "memberName": "Michael Wilson",
+        "savings": {
+          "accountNumber": "SAV10046",
+          "balance": 4300.25,
+          "status": "restricted"
+        },
+        "checking": {
+          "accountNumber": "CHK10046",
+          "balance": 950.00,
+          "status": "active"
+        }
+      },
+      {
+        "memberId": "10047",
+        "memberName": "Sarah Johnson",
+        "savings": {
+          "accountNumber": "SAV10047",
+          "balance": 11000.00,
+          "status": "active"
+        },
+        "checking": {
+          "accountNumber": "CHK10047",
+          "balance": 0,
+          "status": "closed"
+        }
+      },
+      {
+        "memberId": "10048",
+        "memberName": "David Miller",
+        "savings": {
+          "accountNumber": "SAV10048",
+          "balance": 2800.40,
+          "status": "active"
+        },
+        "checking": {
+          "accountNumber": "CHK10048",
+          "balance": 1400.80,
+          "status": "active"
+        }
+      },
+      {
+        "memberId": "10049",
+        "memberName": "Olivia Taylor",
+        "savings": null,
+        "checking": null
+      },
+      {
+        "memberId": "10050",
+        "memberName": "James Anderson",
+        "savings": {
+          "accountNumber": "SAV10050",
+          "balance": 15500.60,
+          "status": "active"
+        },
+        "checking": {
+          "accountNumber": "CHK10050",
+          "balance": 3200.15,
+          "status": "active"
+        }
+      },
+      {
+        "memberId": "10051",
+        "memberName": "Sophia Martinez",
+        "savings": {
+          "accountNumber": "SAV10051",
+          "balance": 675.25,
+          "status": "active"
+        },
+        "checking": {
+          "accountNumber": "CHK10051",
+          "balance": 2100.00,
+          "status": "active"
+        }
+      }
+    ]
+  }
+  

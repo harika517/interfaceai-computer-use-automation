@@ -1,0 +1,21 @@
+{
+  "runId": "20261106T235004-902a97",
+  "workflow": {
+    "name": "member.get_savings_balance",
+    "version": "1.0.1",
+    "status": "reusable"
+  },
+  "status": "BUSINESS_OUTCOME",
+  "businessOutcome": {
+    "code": "PERMISSION_DENIED",
+    "message": "You do not have permission to view this account."
+  },
+  "recovered": [],
+  "fallbacksUsed": [],
+  "checks": [],
+  "metrics": {
+    "steps": 6,
+    "llmCalls": 0,
+    "durationMs": 1252
+  }
+}

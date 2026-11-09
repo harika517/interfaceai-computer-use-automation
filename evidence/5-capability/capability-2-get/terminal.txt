@@ -1,0 +1,51 @@
+$ npm run capability -- get member.get_savings_balance
+{
+  "name": "member.get_savings_balance",
+  "version": "1.0.1",
+  "versions": [
+    "1.0.0",
+    "1.0.1"
+  ],
+  "description": "Get the savings balance for member {member_id}",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "member_id": {
+        "type": "string",
+        "pattern": "^\\d{5}$",
+        "description": "The member's 5-digit member ID."
+      }
+    },
+    "required": [
+      "member_id"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": {
+    "savings_balance": {
+      "type": "currency",
+      "description": "Amount shown as \"Balance\" in the \"Savings Account\" section."
+    }
+  },
+  "outcomes": {
+    "statuses": [
+      "SUCCESS",
+      "BUSINESS_OUTCOME",
+      "FAILED",
+      "NEEDS_HUMAN"
+    ],
+    "businessOutcomeCodes": [
+      "NOT_FOUND",
+      "INVALID_INPUT",
+      "NO_ACCOUNT",
+      "PERMISSION_DENIED",
+      "ACCOUNT_CLOSED"
+    ]
+  },
+  "examples": [
+    "get the savings balance for member {member_id}",
+    "find the savings balance for member {member_id}",
+    "what is the savings balance for member {member_id}"
+  ]
+}
+(exit code 0)

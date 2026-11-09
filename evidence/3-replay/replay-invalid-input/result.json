@@ -1,0 +1,21 @@
+{
+  "runId": "20261106T235004-2d224b",
+  "workflow": {
+    "name": "member.get_savings_balance",
+    "version": "1.0.1",
+    "status": "reusable"
+  },
+  "status": "BUSINESS_OUTCOME",
+  "businessOutcome": {
+    "code": "INVALID_INPUT",
+    "message": "Enter a valid 5-digit member ID."
+  },
+  "recovered": [],
+  "fallbacksUsed": [],
+  "checks": [],
+  "metrics": {
+    "steps": 0,
+    "llmCalls": 0,
+    "durationMs": 1
+  }
+}
