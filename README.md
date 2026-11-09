@@ -161,6 +161,16 @@ npm run capability -- execute member.get_savings_balance --version 1.0.1 --args 
 
 `list` and `get` return exit code 0, or 3 when refused.
 
+## Demo Videos
+
+The following recordings demonstrate the core functionality of the project.
+
+1. **LLM Discovery** — An LLM navigates the mock banking application and retrieves a savings balance. [Watch demo](https://github.com/harika517/interfaceai-computer-use-automation/releases/tag/v1.0-submission#:~:text=5-,01%2DLLMDiscovery.mov,-sha256%3A58671d875354a98fe7ecd01b2cb0fed55fb9a5a45603dc1bb4584b23137e190b)
+2. **Deterministic Replay** — A workflow recorded during the demonstration as version 1.0.2 executes successfully with zero LLM calls. [Watch demo](https://github.com/harika517/interfaceai-computer-use-automation/releases/tag/v1.0-submission#:~:text=02%2DdeterministicWorkflow.mov)
+3. **Human Handoff** — Automation pauses at an unexpected system notice, transfers control to a person, and resumes successfully. [Watch demo](https://github.com/harika517/interfaceai-computer-use-automation/releases/tag/v1.0-submission#:~:text=03%2Dhuman%2Dhandoff.mov)
+
+The recordings are provided as GitHub Release assets (.mov files).
+
 ## Test members (fake data)
 
 | Member ID | Situation |
